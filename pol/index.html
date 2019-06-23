@@ -98,12 +98,92 @@
 <p>Proof-of-Learnning</p>
 </blockquote>
 <h2 id="_1">背景<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>和以往各种在线课程类似, 蟒营也面临相似的问题:</p>
+<pre><code>如何定量定义
+学员认真程度?
+</code></pre>
 <h2 id="_2">现象<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<ul>
+<li>蟒营课程以开发任务为线索</li>
+<li>任务完成过程中引发的问题问题为入口</li>
+<li>全员主动讨论/实践/交流 为主体</li>
+<li>那么很明显:<ul>
+<li>积极提交 commit</li>
+<li>经常创建 Issue 发起讨论</li>
+<li>在其它学员的 commit/Issue 中回复</li>
+<li>...</li>
+<li>这种学员, 才是蟒营要识别和鼓励的</li>
+</ul>
+</li>
+</ul>
 <h2 id="_3">分析<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<ul>
+<li>当然, 自学的核心内部活动, 必然发生在每个学员头脑内部<ul>
+<li>这就难以量化分析了</li>
+<li>只能退而求其次</li>
+<li>迁移指标到可观察外在行为上</li>
+</ul>
+</li>
+<li>幸好主要蟒营有效外部活动都在 gitlab 中</li>
+<li>而且: <a href="https://gitlab.com/help/api/README.md">Api · Help · GitLab</a><ul>
+<li>官方也有丰富接口</li>
+</ul>
+</li>
+</ul>
 <h2 id="_4">目标<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>那么, 自然的:</p>
+<ul>
+<li>快速开发课程专用工具<ul>
+<li>自动化提取/统计/可视化学员的课程有效行为</li>
+<li>并合理排名...</li>
+</ul>
+</li>
+<li>即可用在:<ul>
+<li>周刊统计提醒</li>
+<li>每个学员毕业时整体行为统计/评定</li>
+<li>课程分析</li>
+<li>...</li>
+</ul>
+</li>
+</ul>
 <h2 id="_5">现状<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<ul>
+<li>代码: <a href="https://gitlab.com/pythonicamp/course/101camp1py/tree/master/pow">pow · master · PythoniCamp / course / 101camp1py · GitLab</a></li>
+<li>版本: v.190621.1742</li>
+<li>依赖:<ul>
+<li>requests</li>
+<li>pandas</li>
+<li>invoke</li>
+<li>python 3.X</li>
+</ul>
+</li>
+<li>统计:<ul>
+<li>ci ~ commit , 课程仓库 push 次数</li>
+<li>cc ~ commit-comments , 提交 diff 页面中的回复/讨论次数</li>
+<li>is ~ issue , 课程提案创建次数</li>
+<li>ic ~ issue-comments , 课程仓提案回复次数</li>
+<li>以上数据, 加权为:<ul>
+<li>ci ~ 30%</li>
+<li>cc ~ 20%</li>
+<li>is ~ 30%</li>
+<li>ic ~ 20%</li>
+</ul>
+</li>
+<li>以此综合指数为基础所有成员为数据域进行归一化处置</li>
+<li>获得 0~1 的最终活跃指数, 再归并为5星:<ul>
+<li>PoL &lt;= .2 -&gt; ★☆☆☆☆</li>
+<li>PoL &lt;= .4 -&gt; ★★☆☆☆</li>
+<li>PoL &lt;= .6 -&gt; ★★★☆☆</li>
+<li>PoL &lt;= .8 -&gt; ★★★★☆</li>
+<li>PoL &lt;= 1. -&gt; ★★★★★</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="changelog">ChangeLog<a class="headerlink" href="#changelog" title="Permanent link">¶</a></h2>
 <ul>
+<li>190624 ZQ 增补细节</li>
 <li>190524 ZQ init.</li>
 </ul>
 <blockquote>
