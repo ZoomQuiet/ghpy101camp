@@ -116,49 +116,56 @@
 <blockquote>
 <p>并不是一定要函式编程才优雅</p>
 </blockquote>
-<p>def request(self, method, **kwargs):
+<pre><code>def request(self, method, **kwargs):
     # ...
     if method not in ("get", "post"):
         req.get_method = lambda: method.upper()
-    # ...</p>
+    # ...
+</code></pre>
 <p>比如上面这个例子中的 lambda: method.upper()</p>
 <p>其实, 说人话就好:</p>
-<p>def request(self, method, **kwargs):
+<pre><code>def request(self, method, **kwargs):
     # ...
     if method not in ("get", "post"):
         req.get_method = method.upper
-    # ...</p>
+    # ...
+</code></pre>
 <h2 id="notimplemented">异常 NotImplemented<a class="headerlink" href="#notimplemented" title="Permanent link">¶</a></h2>
 <blockquote>
 <p>相近命名引发的误用</p>
 </blockquote>
-<p>class SitesManager(object):
+<pre><code>class SitesManager(object):
     def get_image_tracking_code(self):
-        raise NotImplemented</p>
+        raise NotImplemented
+</code></pre>
 <p>而其实应该是:</p>
-<p>class SitesManager(object):
+<pre><code>class SitesManager(object):
     def get_image_tracking_code(self):
-        raise NotImplementedError</p>
+        raise NotImplementedError
+</code></pre>
 <ul>
 <li>NotImplemented 是一个常量, 一般用以二元计算;</li>
 <li>NotImplementedError 才是一个异常类, 配合 raise 来检验子类中是否完成对应函式的实现.</li>
 </ul>
 <h2 id="_1">可变默认参数<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p>最常见的:</p>
-<p>def add_item(new_item, items=[]):
-    items.append(new_item)</p>
+<pre><code>def add_item(new_item, items=[]):
+    items.append(new_item)
+</code></pre>
 <p>这样将出现不可预知的结果,
 推荐声明应该是:</p>
-<p>def add_item(new_item, items=None):
+<pre><code>def add_item(new_item, items=None):
     if items is None:
         items = []
-    items.append(new_item)</p>
+    items.append(new_item)
+</code></pre>
 <p>因为, 执行函式时, 默认参数会尝试运行,
 指定的值是类似 [] {} 等可变量,
 将可能被意外修改/使用.</p>
 <h2 id="assert">用 assert 语句作为保护条件<a class="headerlink" href="#assert" title="Permanent link">¶</a></h2>
 <p>比如:</p>
-<p>assert re.match(VALID_ADDRESS_REGEXP, email) is not None</p>
+<pre><code>assert re.match(VALID_ADDRESS_REGEXP, email) is not None
+</code></pre>
 <p>看起来, assert 是一种检查某些条件和执行失败的简便方法,
 但是, 注意:</p>
 <ul>
@@ -166,17 +173,20 @@
 <li>解释器会从代码树中抛弃断言语句,</li>
 <li>导致类似代码根本不运行</li>
 <li>所以, 建议 assert 只用在测试代码中</li>
-<li>而, 正常的生产代码应该正常检验:</li>
 </ul>
-<p>if not re.match(VALID_ADDRESS_REGEXP, email):
-    raise AssertionError</p>
+<p>而, 正常的生产代码应该正常检验:</p>
+<pre><code>if not re.match(VALID_ADDRESS_REGEXP, email):
+    raise AssertionError
+</code></pre>
 <h2 id="isinstance-type">用 isinstance 替代 type<a class="headerlink" href="#isinstance-type" title="Permanent link">¶</a></h2>
-<p>def which_number_type(num):
+<pre><code>def which_number_type(num):
     if isinstance(num, int):
         print('Integer')
     else:
-        raise TypeError('Not an integer')</p>
-<p>which_number_type(False)  # prints 'Integer', which is incorrect</p>
+        raise TypeError('Not an integer')
+
+which_number_type(False)  # prints 'Integer', which is incorrect
+</code></pre>
 <p>虽然, isinstance() 和 type() 都有数据类型检验的能力,</p>
 <p>但是, 有个重要区别:</p>
 <ul>
