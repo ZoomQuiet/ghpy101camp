@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/101camp_bauhaus_v4h420.ico">
+        <title>SS3: 惨案因 gif 太快而忽略的关键参数 - 蟒营 Python 入门班</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-forest-light.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+<!-- tongji.baidu.com/sc-web/ -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?9a3a82b0caff28b6c6e8d2d2ba5ff11f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">
+
+                    <img src='/img/101camp_bauhaus_v3h32.png'/>
+                    蟒营 Python 入门班
+
+                    </a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../faq/">FAQ</a>
+                            </li>
+                            <li >
+                                <a href="../../license/">License</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">故事 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../story/logo/">Logo</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+<!--
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+
+-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#ss3-gif">SS3: 惨案因 gif 太快而忽略的关键参数</a></li>
+            <li><a href="#_1">苦也:</a></li>
+            <li><a href="#_2">原因:</a></li>
+            <li><a href="#_3">发散:</a></li>
+            <li><a href="#_4">是也乎:</a></li>
+            <li><a href="#ps">PS:</a></li>
+            <li><a href="#pps">PPS:</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+                
+
+<h1 id="ss3-gif">SS3: 惨案因 gif 太快而忽略的关键参数<a class="headerlink" href="#ss3-gif" title="Permanent link">¶</a></h1>
+<h2 id="_1">苦也:<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>为什么用代码总是获得意外的数据?</p>
+</blockquote>
+<p>课程嗯哼到 ch3 (第三周),
+学员们撞到越来越多具体问题,
+好在已经成立小组, 内部交流非常快速;</p>
+<p>立即就有学员给出提示:</p>
+<blockquote>
+<p>好像你用 API 不对, 应该是 task 那个仓库的 issue , 仓库的 ID 用错了...
+这个是大妈的 gif 图中的 </p>
+</blockquote>
+<p><img alt="gif-snap" src="https://ipic.zoomquiet.top/2019-08-13-WechatIMG144-gif-snap.png" /></p>
+<blockquote>
+<p>[强]我看了很多遍gif都没你看的仔细 </p>
+<p>建议你可以直接用截图哈, 看得清晰些, 也省手机空间[皱眉] ...</p>
+</blockquote>
+<h2 id="_2">原因:<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>这其实就是蟒营故意制造的场景,</p>
+<p>感觉 ch3 的 gif 好像变快了, 是要拆开慢慢分析了....
+这么快的速度，肉眼已经很难捕捉到信息了..</p>
+</blockquote>
+<p>是也乎 ╮(╯▽╰)╭</p>
+<pre><code>隐技 --&gt; 如何精细审阅 gif
+&lt;-- 什么是 gif ?
+
+忘记的就是不重要的
+不知道就是不必要的
+事实往往不是这样的
+(￣⊥￣)
+</code></pre>
+<h2 id="_3">发散:<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>隐技 --&gt; 如何精细审阅 gif
+(￣⊥￣)Mac 自带的看图软件 打开 gif 可显示每一帧... 」</p>
+</blockquote>
+<p><img alt="preview" src="https://ipic.zoomquiet.top/2019-08-13-WechatIMG159-preview-mac.png" /></p>
+<p>大妈: </p>
+<ul>
+<li>其实是为了减少图片体积~</li>
+<li>而且 fps16 比 MTV 还慢的~ </li>
+<li>当然…<ul>
+<li>也是个坑~逼大家自主找到好工具~精确 review 」</li>
+</ul>
+</li>
+</ul>
+<p>然后, 果断注意力 got 到点的学员也立即:</p>
+<blockquote>
+<p>有个爱奇艺万能播放器，可以把每帧显示出来"</p>
+</blockquote>
+<p>当然, 可以自然挖掘出针对性的软件来...</p>
+<h2 id="_4">是也乎:<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>这就是蟒营哪, 正如隔壁队长说的:</p>
+<blockquote>
+<p>一个十分开放的课程，开放到他只给你一个框架，内容完全由自己来填写，任何形式任何方法都可以得到包容，也没有人说【哎呀这个应该这样做】，他完全靠自己实际操作来触发一系列隐藏任务，而大妈则是“和蔼”的站在背后不时的看看你，指引你，帮助你把这个发现的问题狠狠的踩下去，推动你去弄个明白。</p>
+</blockquote>
+<h2 id="ps">PS:<a class="headerlink" href="#ps" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>当前课程对应公众号 蟒营101camp 暂定专栏有:</p>
+</blockquote>
+<ul>
+<li>DM 大妈嗯哼 ~ 文本快速呢喃点心境...</li>
+<li>NC 嗯哼蟒营 ~ 图文/图片有关课程信息</li>
+<li>SS 学员故事 ~ 各期课程中发生的真实"血案"</li>
+<li>TS 技术鳮汤 ~ 转载/原创自学技术/心法相关嗯哼</li>
+</ul>
+<p>欢迎投稿, 邮件给课程组就好:</p>
+<pre><code>guru101camp@googlegroups.com
+</code></pre>
+<h2 id="pps">PPS:<a class="headerlink" href="#pps" title="Permanent link">¶</a></h2>
+<p>蟒营(101.camp): </p>
+<pre><code>伴你重新享受自学乐趣
+Reactivate Joy by Self-teach with You
+</code></pre>
+<ul>
+<li>所以, 不仅仅是 Python ,</li>
+<li>马上将用蟒营形式发布写作课程,</li>
+<li>欢迎大家参与体验,</li>
+<li>用7+1周时间<ul>
+<li>重新获得写作的乐趣</li>
+<li>以及一组高效出品习惯</li>
+</ul>
+</li>
+</ul>
+                <hr/>
+                <h3>精品小班, 现已开课</h3>
+
+<blockquote>
+<p>
+    101camp3py ~ 第3期, 预计 九月一号 上线;
+</p>
+</blockquote>
+
+<p>想及时获得通知, 请关注公众号:
+    <br/>
+<img alt="PythoniCamp" src="http://0.zoomquiet.top/logos/101.camp/banner_101camp_h191.jpg"/>
+    <br/>
+实在想立即开始感受蟒营, 可以加入知识星球(免费):
+    <br/>
+
+<img alt="蟒营101camp" src="https://ipic.zoomquiet.top/2019-08-09-190809camp101.jpeg"/>
+
+</p>
+
+<h2>蟒营</h2>
+<p>
+    伴你重新享受<b>自学</b>乐趣
+</p>
+<blockquote>
+<p>
+    <b>
+    101.camp
+    </b>
+</p>
+<p>
+    <i>
+    Reactivate Joy by Self-teach with You
+    </i>
+</p>
+</blockquote>
+
+<h3>追问</h3>
+<p>
+    任何问题, 随时邮件提问可也:
+</p>
+<blockquote>
+<p>
+    <i>
+    ask@101.camp
+    </i>
+</p>
+</blockquote>
+
+
+
+
+
+
+                <hr/>
+                <!-- comments by gh-issue -->
+<script src="https://utteranc.es/client.js"
+        repo="101camp/comments"
+        issue-term="url"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+                </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>©101camp 2019</p>
+
+                <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+
+This Site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+</p>
+
+
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>;-)</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
