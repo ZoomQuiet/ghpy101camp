@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/91174f7d-c24c-4fbe-92be-8eea0af51b61/deploy-status)](https://app.netlify.com/sites/py-101-camp/deploys)
+
 # py101camp
 > 蟒营: Python 入门班官网
 
@@ -122,6 +124,8 @@
 
 ## 是也乎:
 
+
+- 200911 ZoomQuiet 增补 Netlify badges 
 - 190325 DAMA 增补说明文档
 - 190324 DAMA 紧急 black-box 化内容维护过程
 - 190321 内部发布
